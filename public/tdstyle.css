@@ -1,0 +1,281 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  /* hamne agar ek box ko kch width diya hai aur sath hi sath usme padding aur border bhi de diya hai 
+  to total length width+padding+border hota hai...par agar ham aisa nhi chahte ham chahte hai ki hamne jitna
+  width specify kiya hai usi k andar sab kch rhe to uske liye ye border-box karte hai...ye apne width
+  k andar sabko include kar leta hai */
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* body{
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background: linear-gradient(135deg, #4AB1FF, #2D5CFE);
+} */
+
+/* agar text select karoge to ye color hoga wahi be copy karne k liye select krne wala */
+::selection{
+  color: #fff;
+  background: blue;
+}
+
+/* niche se padding nhi mil rha tha isliye naye div me dal k karna pada*/
+.tdpkl{
+  padding-bottom: 5px;
+}
+
+.tdwrapper{
+  width: 70vw;
+  padding: 28px 0 30px;
+  margin: 30px auto;
+  background: rgba(250, 228, 195, 0.888);
+  border-radius: 20px;
+  box-shadow: 5px 5px rgb(238, 189, 116);
+  border-style: outset;
+}
+
+@media only screen and (max-width: 800px){
+  .tdwrapper{
+      width: 85vw;
+  }
+}
+
+.settings i{
+  padding-left: 10px;
+}
+.tdtask-input{
+  height: 52px;
+  padding: 0 25px;
+  position: relative;
+}
+.tdtask-input img{
+  top: 50%;
+  position: absolute;
+  transform: translate(17px, -50%);
+}
+.tdtask-input input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 0 20px 0 53px;
+  border: 1px solid  rgb(246, 180, 82);
+}
+
+/* ya hover kar dena */
+.tdtask-input input:focus,
+.tdtask-input input.active{
+  padding-left: 52px;
+  border: 2px solid  rgb(246, 180, 82);
+  box-shadow: 1px 1px rgb(246, 180, 82);
+}
+/*  : ye pseudo class k liye hota hai like hover wahi ::ye pseudo element k liye hota hai..mtlb agar kisi 
+element k upar css lagana ho to */
+.tdtask-input input::placeholder{
+  color: #bfbfbf;
+}
+
+.tdcontrols , .tdtask-box li {
+  display: flex;
+  align-items: center;
+  /* ye hamare jo bhi elements hai us div k andar unke bich me space de deta hai agar wo flex hai to like
+  pahle ko left side aur dusare ko right side karke*/
+  justify-content: space-between;
+}
+
+
+.tdcontrols{
+  padding: 18px 25px;
+  /* simple border karoge to charo taraf de dega par border-bottom sirf niche ek line khinch dega */
+  border-bottom: 2px solid #ccc;
+}
+
+@media only screen and (max-width: 450px){
+  .tdcontrols{
+    display: flex;
+    flex-direction: column;
+  }
+  .tdclear-btn{
+    margin-top: 15px;
+  }
+}
+
+.tdfilters span{
+  margin: 0 8px;
+  font-size: 17px;
+  color: #444444;
+  cursor: pointer;
+}
+.tdfilters span:first-child{
+  margin-left: 0;
+}
+/* active aur hover me yahi difference hai ki hover pata hi hai par active me at a moment jab
+click kiye to property lagega aur ye ek pseudo class hai 
+par yaha :active nhi hai yaha class wala .active hai*/
+.tdfilters span.active{
+  color: rgb(255, 153, 0);
+}
+.tdcontrols .tdclear-btn{
+  border: none;
+  outline: none;
+  color: black;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 4px;
+  /* alphabets k bich ka distance */
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+  background: linear-gradient(135deg, rgb(255, 185, 86), rgb(255, 153, 0));
+}
+.tdclear-btn.active{
+  pointer-events: auto;
+}
+.tdclear-btn:active{
+  transform: scale(0.93);
+}
+.tdtask-box{
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 0 20px 10px 25px;
+}
+.tdtask-box.overflow{
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+/* scrollbar ka size */
+.tdtask-box::-webkit-scrollbar{
+  width: 5px;
+}
+/* track yani jo ghumta hai upar niche uske picche  wala  */
+.tdtask-box::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+
+/* thumb yani jo ghumta hai wala */
+.tdtask-box::-webkit-scrollbar-thumb{
+  background: #e6e6e6;
+  border-radius: 25px;
+}
+.tdtask-box .task{
+  list-style: none;
+  font-size: 17px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+}
+
+/* last child yani wahi ... wala */
+.tdtask-box .task:last-child{
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.tdtask-box .task label{
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.task label input{
+  margin-top: 7px;
+  /* checkbox click karne k bad ka color */
+  accent-color: blue;
+}
+.task label p{
+  user-select: none;
+  margin-left: 12px;
+  /* break-word yani apne aap niche aa jana aur overflow na hona */
+  word-wrap: break-word;
+  
+}
+.task label p.checked{
+  /* agar status completed hai to class ka name javascript se checked ho jayega aur ye property apply hoga */
+  text-decoration: line-through;
+}
+.tdtask-box .settings{
+  position: relative;
+}
+/* yani setting me jaha bhi i aur li hai usme */
+.settings :where(i, li){
+  cursor: pointer;
+}
+.settings .task-menu{
+  z-index: 10;
+  right: -5px;
+  bottom: -65px;
+  padding: 5px 0;
+  background: #fff;
+  position: absolute;
+  border-radius: 4px;
+  /* yaha hamne size ko 0,0 kar diya hai isliye wo dikhega hi nhi...bad me show wala class jab aayega wo click hone ke 
+  bad to waha wapas 1,1 kar denge ... 0,0 mtlb length=0*original length, width=0*original width ...wahi (1,1) 
+  mtlb original length ka 1 guna aur original width ka bhi ek guna (2,2) karne par do do guna ho jata dono*/
+  transform: scale(0,0);
+  transform-origin: top right;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+.tdtask-box .task:last-child .task-menu{
+  bottom: 0;
+  transform-origin: bottom right;
+}
+.tdtask-box .task:first-child .task-menu{
+  bottom: -65px;
+  transform-origin: top right;
+}
+/* waha class joda tha ki menu pe click karne par mai iska scale 1,1 kar dunga aur wo dikhne lagega */
+.task-menu.show{
+  transform: scale(1,1);
+}
+.task-menu li{
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 2px;
+  padding: 17px 15px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+.task-menu li:last-child{
+  margin-bottom: 0;
+}
+.settings li:hover{
+  background: #f5f5f5;
+}
+.settings li i{
+  padding-right: 8px;
+}
+
+@media (max-width: 400px) {
+  body{
+    padding: 0 10px;
+  }
+  .tdwrapper {
+    padding: 20px 0;
+  }
+  .tdfilters span{
+    margin: 0 5px;
+  }
+  .tdtask-input{
+    padding: 0 20px;
+  }
+  .tdcontrols{
+    padding: 18px 20px;
+  }
+  .tdtask-box{
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 15px 10px 20px;
+  }
+  .task label input{
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,83 @@
+
+.xfdiv{
+    min-height: 90vh;
+    background-color: rgb(242, 229, 210);
+    margin: auto;
+    padding-top: 1px;
+}
+.xup{
+    background-color: rgba(255, 153, 0, 0.4);
+    box-shadow: 3px 3px rgb(255, 153, 0);
+    max-width: 350px;
+    margin: auto;
+    border: 1px;
+    border-radius: 22px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.689);
+}
+.xheading{
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 5px;
+}
+
+
+.xrb{
+    background-color: rgba(250, 228, 195, 0.888);
+    width: 70vw;
+    border-radius: 20px;
+    box-shadow: 5px 5px rgb(238, 189, 116);
+    margin: auto;
+    padding: 15px;
+    font-size: 19px;
+    margin-bottom: 50px;
+}
+
+.xpb{
+    display: flex;
+}
+
+#x0 , #x1 , #x2{
+    margin: auto;
+}
+
+.xlab{
+    margin-top: 20px;
+}
+
+.xsub{
+    max-width: 130px;
+    box-shadow: 2px 2px rgb(238, 189, 116);
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+    background-color: rgba(254, 217, 162, 0.888);
+    border-radius: 20px;
+}
+.xsub , .xsb:hover{
+    cursor: pointer;
+}
+
+.xsb{
+    font-size: 15px;
+    padding: 5px;
+    border-style: none;
+    background-color: rgba(0, 0, 255, 0);
+}
+
+@media only screen and (max-width: 800px){
+    .xrb{
+        width: 85vw;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .xpb{
+        display: block;
+        padding-left: 20px;
+    }
+    .xup{
+        max-width: 210px;
+    }
+}
